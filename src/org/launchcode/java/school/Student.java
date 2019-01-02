@@ -26,5 +26,35 @@ public class Student {
     }
 
     /* getters and setters  */
+    /* protected so that subclasses can be used in other packages, but I don't want other classes
+    in other packages accessing this data
+     */
+    protected String getName() {
+        return(this.name);
+    }
+
+    protected String setName(String name) {
+        this.name = name;
+    }
+
+    protected double getGpa() {
+        return(this.gpa);
+    }
+
+    protected String setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    protected int getNumberOfCredits() {
+        return(this.numberOfCredits);
+    }
+
+    protected int setNumberOfCredits(int numberOfCredits) {
+        this.numberOfCredits = numberOfCredits;
+    }
+
+    protected int getStudentId(){
+        return(this.studentId);
+    }
 
 }
