@@ -13,5 +13,6 @@ public class Course {
     private int currentEnrollment;
     private int minEnrollment;
     private HashMap<Integer,  String> studentAndIds;
+    private String instructor;
 
 }
