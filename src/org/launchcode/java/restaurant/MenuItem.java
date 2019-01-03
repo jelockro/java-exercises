@@ -35,19 +35,19 @@ public class MenuItem {
     }
 
     // Setters
-    protected void setPrice(Double aprice) {
-        this.price = aprice;
+    protected void setPrice(Double aPrice) {
+        this.price = aPrice;
     }
 
-    protected void setDescription(String adescription) {
-        this.description = adescription;
+    protected void setDescription(String aDescription) {
+        this.description = aDescription;
     }
 
-    protected void setCategory(String acategory){
-        this.category = acategory;
+    protected void setCategory(String aCategory){
+        this.category = aCategory;
     }
 
-    protected void setNewStatus(Boolean anewStatus) {
-        this.newStatus = anewStatus;
+    protected void setNewStatus(Boolean aNewStatus) {
+        this.newStatus = aNewStatus;
     }
 }
