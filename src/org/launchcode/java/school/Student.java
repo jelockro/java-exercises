@@ -33,7 +33,7 @@ public class Student {
         return(this.name);
     }
 
-    protected String setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -41,7 +41,7 @@ public class Student {
         return(this.gpa);
     }
 
-    protected String setGpa(double gpa) {
+    protected void setGpa(double gpa) {
         this.gpa = gpa;
     }
 
@@ -49,7 +49,7 @@ public class Student {
         return(this.numberOfCredits);
     }
 
-    protected int setNumberOfCredits(int numberOfCredits) {
+    protected void setNumberOfCredits(int numberOfCredits) {
         this.numberOfCredits = numberOfCredits;
     }
 
