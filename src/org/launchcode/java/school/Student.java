@@ -8,15 +8,14 @@ public class Student {
     private int numberOfCredits;
     private double gpa;
 
-    public Student(String name, int studentId,
-                   int numberOfCredits, double gpa) {
+    private Student(String name, int studentId, int numberOfCredits, double gpa) {
         this.name = name;
         this.studentId = studentId;
         this.numberOfCredits = numberOfCredits;
         this.gpa = gpa;
     }
 
-    public Student(String name, int studentId) {
+    private Student(String name, int studentId) {
         this(name, studentId, 0, 0);
     }
 
@@ -57,4 +56,49 @@ public class Student {
         return(this.studentId);
     }
 
+
+    //  Methods
+    private void addGrade(double grade, int credits) {
+        double currentQualityScore = getGpa() * getNumberOfCredits();
+        double enteredQualityScore = grade * credits;
+        double newQualityScore = currentQualityScore + enteredQualityScore;
+        int newCreditTotal = getNumberOfCredits() + credits;
+        setNumberOfCredits(newCreditTotal);
+        double updatedGPA = newQualityScore / newCreditTotal;
+        setGpa(updatedGPA);
+    }
+
+    public String getGradeLevel() {
+        String gradeLevel = "Freshman";
+        if (this.numberOfCredits > 29 && this.numberOfCredits < 60){
+            gradeLevel = "Sophomre";
+        } else if (this.numberOfCredits > 59 && this.numberOfCredits < 90){
+            gradeLevel = "Junior";
+        } else if (this.numberOfCredits > 89) { gradeLevel = "Senior";}
+        return gradeLevel;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + " (Credits: " + this.numberOfCredits + ", GPA: " + this.gpa + ")";
+    }
+    @Override
+    public boolean equals(Object o) {
+        // reference check
+        if (o == this) {
+            return true;
+        }
+        // null check
+        if (o == null) {
+            return false;
+        }
+        // class check
+        if (o.getClass() != getClass()) {
+            return false;
+        }
+        // cast
+        Student theStudent = (Student) o;
+        // custom comparison
+        return theStudent.getStudentId() == getStudentId();
+    }
 }
